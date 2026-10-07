@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>Tara Palawan — Plan, Book & Navigate Palawan, Philippines</title>
+<meta name="description" content="Tara Palawan is the one-stop platform for Palawan trips: destinations, tours, hotels, transport, food, trip planner, safety, maps and deals." />
+<meta name="theme-color" content="#0a6fd8" />
+<meta property="og:title" content="Tara Palawan — Plan, Book & Navigate Palawan" />
+<meta property="og:description" content="Search tours, hotels and restaurants. Build itineraries, check safety info, chat with our AI assistant." />
+<meta property="og:type" content="website" />
+<link rel="manifest" href="manifest.json" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏝</text></svg>" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=20261009" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"TouristDestination","name":"Palawan, Philippines","description":"El Nido lagoons, Coron wrecks, Underground River and quiet beaches.","touristType":"Beach, adventure and dive travelers"}
+</script>
+</head>
+<body>
+<div class="progress" id="progress"></div>
+<div id="cookieBar" class="cookie-bar hidden"><span>We use cookies for bookings & preferences (GDPR). <button id="cookieOk">Accept</button> <button id="cookieNo" class="ghost">Decline</button></span></div>
+
+<header class="nav" id="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="#top"><span class="brand-mark">TP</span> Tara&nbsp;Palawan</a>
+    <div class="nav-search"><input id="navSearch" placeholder="Search tours, hotels, food…" autocomplete="off" /><div id="navSuggest" class="suggest hidden"></div></div>
+    <nav class="links">
+      <a href="#destinations">Places</a><a href="#todo">Tours</a><a href="#stay">Stays</a><a href="#planner">Planner</a><a href="#promos">Deals</a>
+    </nav>
+    <div class="nav-actions">
+      <select id="langSel" aria-label="Language"><option value="en">EN</option><option value="tl">TL</option></select>
+      <select id="curSel" aria-label="Currency"><option value="PHP">₱ PHP</option><option value="USD">$ USD</option><option value="EUR">€ EUR</option></select>
+      <button id="a11yBtn" class="icon-btn a11y" aria-label="Accessibility options">Aa</button>
+      <a href="#todo" class="btn primary small nav-cta">Book now</a>
+      <button id="authBtn" class="btn ghost small">Sign in</button>
+      <button id="menuBtn" class="menu-btn" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+  <div id="mobileMenu" class="mobile-menu">
+    <a href="#destinations">Destinations</a><a href="#todo">Things to Do</a><a href="#stay">Accommodation</a><a href="#transport">Transportation</a><a href="#food">Food</a><a href="#planner">Trip Planner</a><a href="#essentials">Essentials</a><a href="#safety">Safety</a><a href="#tips">Local Tips</a><a href="#maps">Maps</a><a href="#shop">Shopping</a><a href="#reviews">Reviews</a><a href="#blog">Blog</a><a href="#contact">Contact</a>
+  </div>
+</header>
+
+<main id="top">
+<!-- 1 HOME -->
+<section class="hero">
+  <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+  <span class="leaf l1" aria-hidden="true"></span>
+  <div class="container hero-grid">
+    <div>
+      <p class="eyebrow reveal"><span class="pulse"></span> Palawan, Philippines • The Last Frontier</p>
+      <h1 class="reveal d1">Find your <em>paradise</em><br>in Palawan.</h1>
+      <p class="lead reveal d2">Voted the world's best island time and again — hidden lagoons in El Nido, WWII wrecks in Coron, a river beneath a mountain in Puerto Princesa. Plan, book, and explore it all in one place.</p>
+      <div class="trust-row reveal d3"><span>★ 4.9 · 12,000+ reviews</span><span>World's Best Island</span><span>Free cancellation</span></div>
+      <form class="search-card reveal d3" id="heroSearch">
+        <label>Where to?<input id="sWhere" list="destList" placeholder="El Nido, Coron, Puerto Princesa…" autocomplete="off" /><datalist id="destList"><option>El Nido</option><option>Coron</option><option>Puerto Princesa</option><option>Port Barton</option><option>San Vicente</option><option>Balabac</option></datalist></label>
+        <label>From<input id="sFrom" type="date" /></label>
+        <label>To<input id="sTo" type="date" /></label>
+        <label>Travelers<select id="sPax"><option>1</option><option selected>2</option><option>3–5</option><option>6+</option></select></label>
+        <button class="btn primary" type="submit">Search →</button>
+      </form>
+      <div class="hero-widgets reveal d4">
+        <div class="widget" id="weatherWidget">☀ <span id="wxTemp">30°C</span> El Nido • <span id="wxTime">--:--</span> PHT</div>
+        <div class="widget" id="sunWidget">Sunset in El Nido: <span id="sunCount">--</span></div>
+        <a class="btn ghost small" href="#planner">Plan My Trip</a>
+        <a class="btn primary small" href="#todo">Book Now</a>
+      </div>
+    </div>
+    <div class="scene-card reveal d2">
+      <img class="scene-photo" loading="eager" src="https://images.unsplash.com/photo-1746260948447-c06796c0a901?auto=format&fit=crop&w=1000&q=70" alt="Kayakers in the turquoise Big Lagoon, El Nido" />
+      <div class="scene-shade" aria-hidden="true"></div>
+      <svg viewBox="0 0 400 520" role="img" aria-label="El Nido lagoon with limestone karsts, a bangka boat and sunset">
+        <defs>
+          <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#a9ecdf"/><stop offset=".62" stop-color="#e8f8ef"/><stop offset="1" stop-color="#fdf3d8"/></linearGradient>
+          <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3fd9c0"/><stop offset="1" stop-color="#046a62"/></linearGradient>
+          <radialGradient id="glow"><stop offset="0" stop-color="#ffd97a" stop-opacity=".9"/><stop offset="1" stop-color="#ffd97a" stop-opacity="0"/></radialGradient>
+        </defs>
+        <rect width="400" height="520" fill="url(#sky)"/>
+        <circle cx="308" cy="102" r="66" fill="url(#glow)"/>
+        <circle cx="308" cy="102" r="32" fill="#ffcf5e"/>
+        <ellipse cx="110" cy="92" rx="52" ry="16" fill="#fff" opacity=".85"/>
+        <ellipse cx="180" cy="120" rx="36" ry="11" fill="#fff" opacity=".7"/>
+        <path d="M150 132 q8 -8 16 0 M172 128 q7 -7 14 0" stroke="#0a4a56" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+        <path d="M0 348 L0 190 Q34 150 62 196 L92 258 Q108 312 88 348 Z" fill="#0a4a56"/>
+        <path d="M0 348 L0 230 Q28 200 52 240 L70 300 Q78 330 66 348 Z" fill="#07333d" opacity=".85"/>
+        <path d="M400 348 L400 150 Q362 118 336 168 L312 240 Q298 306 318 348 Z" fill="#0a4a56"/>
+        <path d="M400 348 L400 200 Q376 172 356 208 L340 280 Q332 322 344 348 Z" fill="#07333d" opacity=".85"/>
+        <path d="M30 250 l24 -10 M330 230 l24 -10" stroke="#7fe3d4" stroke-width="3" stroke-linecap="round" opacity=".6"/>
+        <rect y="336" width="400" height="184" fill="url(#sea)"/>
+        <path class="wv-a" d="M-40 372 q30 -14 60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 V520 H-40 Z" fill="#fff" opacity=".28"/>
+        <path class="wv-b" d="M-40 402 q30 -12 60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 V520 H-40 Z" fill="#eafaf3" opacity=".3"/>
+        <ellipse cx="200" cy="430" rx="70" ry="10" fill="#07333d" opacity=".18"/>
+        <g stroke="#07333d" stroke-width="4" stroke-linecap="round">
+          <path d="M150 428 Q200 444 250 428 L238 416 Q200 428 162 416 Z" fill="#07333d" stroke="none"/>
+          <path d="M138 424 L120 416 M262 424 L280 416"/>
+        </g>
+        <rect x="196" y="388" width="5" height="34" fill="#07333d"/>
+        <path d="M201 388 L232 418 L201 418 Z" fill="#ff8c42"/>
+        <circle cx="203" cy="404" r="6" fill="#07333d"/>
+        <ellipse cx="200" cy="498" rx="150" ry="26" fill="#f7ead1"/>
+      </svg>
+      <div class="scene-badges">
+        <span class="float-badge b-a">★ 4.9 · Loved worldwide</span>
+        <span class="float-badge b-b">◎ El Nido · Big Lagoon</span>
+        <span class="float-badge b-c">No.1 World's Best Island</span>
+      </div>
+    </div>
+  </div>
+  <div class="container"><div class="deals-strip reveal">
+    <strong>Flash deals</strong>
+    <span class="deal-chip">−10% tours <code>PALAWAN10</code><button data-copy="PALAWAN10">Copy</button></span>
+    <span class="deal-chip">−15% stays <code>STAY15</code><button data-copy="STAY15">Copy</button></span>
+    <span class="deal-chip">−₱500 food <code>FOODIE5</code><button data-copy="FOODIE5">Copy</button></span>
+    <form id="dealAlert"><input id="dealEmail" type="email" required placeholder="Email for deal alerts" /><button class="btn primary small" type="submit">Alert me</button></form>
+  </div></div>
+  <div class="trustbar"><div class="container trustbar-inner"><span>✓ Best price guarantee</span><span>✓ Free cancellation on tours</span><span>✓ DOT-accredited partners</span><span>✓ Secure checkout</span></div></div>
+  <div class="tide" aria-hidden="true"><svg viewBox="0 0 1440 70" preserveAspectRatio="none"><path d="M0,32 C240,70 480,0 720,28 C960,56 1200,64 1440,24 L1440,70 L0,70 Z"/></svg></div>
+  <div class="weave" aria-hidden="true"></div>
+</section>
+
+<!-- DASHBOARD SPOTLIGHT: featured video -->
+<section class="section video-spot">
+  <div class="container video-grid">
+    <div class="reveal">
+      <p class="eyebrow">Dashboard spotlight • Watch</p>
+      <h2>It's more fun in Puerto Princesa — take the virtual tour.</h2>
+      <p class="muted">Official virtual tour by Tourism Philippines. Preview the Underground River, Honda Bay and the city before you go — then jump to the PPS guides below.</p>
+      <div class="card-actions">
+        <a class="btn primary small" href="#destinations">Explore destinations</a>
+        <a class="btn ghost small" target="_blank" rel="noopener" href="https://youtu.be/U-U3yE6dyXA">Watch on YouTube →</a>
+      </div>
+    </div>
+    <div class="video-wrap reveal d1">
+      <iframe title="Virtual Tour — It's More Fun with You in Puerto Princesa" loading="lazy" src="https://www.youtube-nocookie.com/embed/U-U3yE6dyXA?rel=0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- 2 DESTINATIONS -->
+<section id="destinations" class="section">
+  <div class="container">
+    <p class="eyebrow reveal">Destinations</p><h2 class="reveal d1">Six islands, one unforgettable Palawan</h2>
+    <p class="section-intro reveal d1">Mula limestone lagoons hanggang tahimik na fishing villages — each stop has its own flavor. Pick your bases, then mix and match.</p>
+    <div class="cards" id="destGrid">
+      <article class="card reveal dest" data-name="El Nido"><div class="card-top el-nido">
+<img class="thumb" loading="lazy" src="https://images.unsplash.com/photo-1679278424047-f6fb742bd3bb?auto=format&fit=crop&w=800&q=70" onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/QYxzYrCNf4Q/hqdefault.jpg'" alt="Aerial paddlers over El Nido sea, Palawan" />
+<button class="watch-btn" data-yt="QYxzYrCNf4Q" data-title="El Nido 2025 Travel Guide — Angelica & Aileen Wanders">▶ Watch guide</button>
+<span class="card-badge">Must-see</span><span class="card-title">El Nido</span><span class="card-sub">Best Nov–May • 3–4 days</span></div><div class="card-body"><p><strong>Top:</strong> Big & Small Lagoons, Nacpan, Taraw Cliff. <strong>Culture:</strong> fishing town, Cuyonon roots, sunset Taraw rituals.</p><div class="card-actions"><button class="btn ghost small wish">♡ Save</button><a class="btn primary small" href="#todo">See tours</a></div></div></article>
+      <article class="card reveal d1 dest" data-name="Coron"><div class="card-top coron">
+<img class="thumb" loading="lazy" src="https://images.unsplash.com/photo-1758782551890-0f47a570859c?auto=format&fit=crop&w=800&q=70" onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/nGCOmxDWVLw/hqdefault.jpg'" alt="Turquoise lagoon ringed by green cliffs, Coron" />
+<button class="watch-btn" data-yt="nGCOmxDWVLw" data-title="Coron Travel Guide — Island Hopper TV">▶ Watch guide</button>
+<span class="card-badge">Diving</span><span class="card-title">Coron</span><span class="card-sub">Best Nov–May • 3–4 days</span></div><div class="card-body"><p><strong>Top:</strong> Kayangan Lake, Twin Lagoon, WWII wrecks. <strong>Culture:</strong> Tagbanua heritage, lakes are sacred — no loud music.</p><div class="card-actions"><button class="btn ghost small wish">♡ Save</button><a class="btn primary small" href="#todo">See tours</a></div></div></article>
+      <article class="card reveal d2 dest" data-name="Puerto Princesa"><div class="card-top pps">
+<img class="thumb" loading="lazy" src="https://i.ytimg.com/vi/U-U3yE6dyXA/hqdefault.jpg" alt="Puerto Princesa Underground River video preview" />
+<button class="watch-btn" data-yt="U-U3yE6dyXA" data-title="Puerto Princesa Virtual Tour — Tourism Philippines">▶ Watch guide</button>
+<span class="card-badge">UNESCO</span><span class="card-title">Puerto Princesa</span><span class="card-sub">Year-round • 1–2 days</span></div><div class="card-body"><p><strong>Top:</strong> Underground River, Honda Bay, fireflies. <strong>Culture:</strong> city of festivals, Baywalk grill culture.</p><div class="card-actions"><button class="btn ghost small wish">♡ Save</button><a class="btn primary small" href="#todo">See tours</a></div></div></article>
+      <article class="card reveal dest" data-name="Port Barton"><div class="card-top port">
+<img class="thumb" loading="lazy" src="https://i.ytimg.com/vi/9GXoFTnjfBI/hqdefault.jpg" alt="Port Barton island hopping video preview" />
+<button class="watch-btn" data-yt="9GXoFTnjfBI" data-title="Port Barton's Ultimate Island Tour — Ole Stories">▶ Watch guide</button>
+<span class="card-badge">Slow travel</span><span class="card-title">Port Barton</span><span class="card-sub">Best Dec–May • 2–3 days</span></div><div class="card-body"><p><strong>Top:</strong> German & Starfish Islands, turtle point. Cash-only village, quiet nights.</p><div class="card-actions"><button class="btn ghost small wish">♡ Save</button><a class="btn primary small" href="#todo">See tours</a></div></div></article>
+      <article class="card reveal d1 dest" data-name="San Vicente"><div class="card-top sanvic">
+<img class="thumb" loading="lazy" src="https://i.ytimg.com/vi/Rrxm-sL1vy0/hqdefault.jpg" alt="San Vicente Long Beach video preview" />
+<button class="watch-btn" data-yt="Rrxm-sL1vy0" data-title="Top 6 Places in San Vicente — LUMAD CEBUANO">▶ Watch guide</button>
+<span class="card-badge">14 km sand</span><span class="card-title">San Vicente</span><span class="card-sub">Best Nov–Apr • 1–2 days</span></div><div class="card-body"><p><strong>Top:</strong> Long Beach walk, Alimanguan surf (Jan–Mar), waterfalls.</p><div class="card-actions"><button class="btn ghost small wish">♡ Save</button><a class="btn primary small" href="#todo">See tours</a></div></div></article>
+      <article class="card reveal d2 dest" data-name="Balabac"><div class="card-top balabac">
+<img class="thumb" loading="lazy" src="https://i.ytimg.com/vi/piUSyoGvpcQ/hqdefault.jpg" alt="Balabac sandbars expedition video preview" />
+<button class="watch-btn" data-yt="piUSyoGvpcQ" data-title="Balabac Full Travel Guide — Abby and Gaz">▶ Watch guide</button>
+<span class="card-badge">Expedition</span><span class="card-title">Balabac</span><span class="card-sub">Best Feb–May • 3–4 days</span></div><div class="card-body"><p><strong>Top:</strong> Onuk & Candaraman sandbars. 3D2N expedition only, for experienced travelers.</p><div class="card-actions"><button class="btn ghost small wish">♡ Save</button><a class="btn primary small" href="#todo">See tours</a></div></div></article>
+    </div>
+  </div>
+</section>
+
+<!-- 3 THINGS TO DO -->
+<section id="todo" class="section alt">
+  <div class="container">
+    <p class="eyebrow reveal">Things to do</p><h2 class="reveal d1">Tours, trips & festivals</h2>
+    <p class="section-intro reveal d1">Island-hopping at sunrise, wreck dives by noon, fireflies by night. Filter by craving, budget, and energy level.</p>
+    <div class="filter-bar reveal d2">
+      <select id="fCat"><option value="all">All categories</option><option value="lagoon">Lagoons</option><option value="dive">Dive/wreck</option><option value="culture">Culture</option><option value="beach">Beach</option></select>
+      <select id="fPrice"><option value="all">Any price</option><option value="low">Under ₱1,600</option><option value="mid">₱1,600–₱2,200</option><option value="high">₱2,200+</option></select>
+      <select id="fDur"><option value="all">Any duration</option><option value="half">Half-day</option><option value="full">Full-day</option><option value="multi">Multi-day</option></select>
+      <select id="fRate"><option value="0">Any rating</option><option value="45">4.5★+</option><option value="48">4.8★+</option></select>
+    </div>
+    <div class="cards" id="tourGrid">
+      <article class="card tour reveal" data-cat="lagoon" data-price="1800" data-dur="full" data-rate="49" data-name="El Nido Tour A"><div class="card-top el-nido"><img class="thumb" loading="lazy" src="https://images.unsplash.com/photo-1746260948448-d741c5838c16?auto=format&fit=crop&w=800&q=70" onerror="this.remove()" alt="Kayaking through turquoise water, El Nido" /><span class="card-title">El Nido Tour A</span><span class="card-sub">Full-day • 4.9★ • lagoons</span></div><div class="card-body"><p>Big, Small & Secret Lagoons + Shimizu. Lunch & gear included. <strong data-php="1800">₱1,800</strong></p><div class="card-actions"><button class="btn ghost small wish">♡</button><button class="btn primary small book" data-item="El Nido Tour A" data-price="1800">Book Now</button></div></div></article>
+      <article class="card tour reveal" data-cat="beach" data-price="1600" data-dur="full" data-rate="46" data-name="El Nido Tour B"><div class="card-top tour-b"><img class="thumb" loading="lazy" src="https://images.unsplash.com/photo-1760548759043-44de2ad650c5?auto=format&fit=crop&w=800&q=70" onerror="this.remove()" alt="Boats anchored near a sandbar island, Linapacan Palawan" /><span class="card-badge">Tour B • Caves</span><span class="card-title">El Nido Tour B</span><span class="card-sub">Full-day • 4.6★ • caves & islets</span></div><div class="card-body"><p>Snake Island sandbar, Cudugnon & Cathedral Caves. <strong data-php="1600">₱1,600</strong></p><div class="card-actions"><button class="btn ghost small wish">♡</button><button class="btn primary small book" data-item="El Nido Tour B" data-price="1600">Book Now</button></div></div></article>
+      <article class="card tour reveal d1" data-cat="lagoon" data-price="1800" data-dur="full" data-rate="48" data-name="El Nido Tour C"><div class="card-top tour-c"><img class="thumb" loading="lazy" src="https://images.unsplash.com/photo-1710104434504-0261d06fa832?auto=format&fit=crop&w=800&q=70" onerror="this.remove()" alt="Banca boats on the water, El Nido" /><span class="card-badge">Tour C • Beaches</span><span class="card-title">El Nido Tour C</span><span class="card-sub">Full-day • 4.8★ • hidden beaches</span></div><div class="card-body"><p>Hidden Beach, Helicopter Island, Secret & Talisay Beach. <strong data-php="1800">₱1,800</strong></p><div class="card-actions"><button class="btn ghost small wish">♡</button><button class="btn primary small book" data-item="El Nido Tour C" data-price="1800">Book Now</button></div></div></article>
+      <article class="card tour reveal d2" data-cat="lagoon" data-price="1600" data-dur="half" data-rate="45" data-name="El Nido Tour D"><div class="card-top tour-d"><img class="thumb" loading="lazy" src="https://commons.wikimedia.org/wiki/Special:FilePath/Natnat%20beach%20on%20Cadlao%20Island%20-%20panoramio%20%281%29.jpg?width=800" onerror="this.remove()" alt="Natnat Beach on Cadlao Island, El Nido" /><span class="photo-credit">Photo: Wikimedia Commons</span><span class="card-badge">Tour D • Half-day</span><span class="card-title">El Nido Tour D</span><span class="card-sub">Half-day • 4.5★ • Cadlao side</span></div><div class="card-body"><p>Cadlao Lagoon, Pasandigan Cove, Natnat Beach. Perfect arrival-day tour. <strong data-php="1600">₱1,600</strong></p><div class="card-actions"><button class="btn ghost small wish">♡</button><button class="btn primary small book" data-item="El Nido Tour D" data-price="1600">Book Now</button></div></div></article>
+      <article class="card tour reveal d1" data-cat="lagoon" data-price="2000" data-dur="full" data-rate="48" data-name="Coron Ultimate Lagoon"><div class="card-top coron"><img class="thumb" loading="lazy" src="https://images.unsplash.com/photo-1758782551890-a2729fb8beee?auto=format&fit=crop&w=800&q=70" onerror="this.remove()" alt="Boats in a turquoise lagoon below limestone cliffs, Coron" /><span class="card-title">Coron Ultimate Lagoon</span><span class="card-sub">Full-day • 4.8★ • lagoons</span></div><div class="card-body"><p>Kayangan Lake, Twin Lagoon, Skeleton Wreck. <strong data-php="2000">₱2,000</strong></p><div class="card-actions"><button class="btn ghost small wish">♡</button><button class="btn primary small book" data-item="Coron Ultimate Lagoon" data-price="2000">Book Now</button></div></div></article>
+      <article class="card tour reveal d2" data-cat="dive" data-price="4500" data-dur="full" data-rate="49" data-name="Coron Wreck Dive"><div class="card-top coron"><img class="thumb" loading="lazy" src="https://commons.wikimedia.org/wiki/Special:FilePath/Skeleton%20wreck.jpg?width=800" onerror="this.remove()" alt="Freediving at the Skeleton Wreck, Calamian Islands" /><span class="photo-credit">Photo: Wikimedia Commons</span><span class="card-title">Coron Wreck Dive</span><span class="card-sub">Full-day • 4.9★ • dive</span></div><div class="card-body"><p>2 WWII wreck dives with DM, gear & lunch. License required. <strong data-php="4500">₱4,500</strong></p><div class="card-actions"><button class="btn ghost small wish">♡</button><button class="btn primary small book" data-item="Coron Wreck Dive" data-price="4500">Book Now</button></div></div></article>
+      <article class="card tour reveal" data-cat="culture" data-price="2200" data-dur="full" data-rate="47" data-name="Underground River"><div class="card-top pps"><img class="thumb" loading="lazy" src="https://images.unsplash.com/photo-1660849259228-603fad947b89?auto=format&fit=crop&w=800&q=70" onerror="this.remove()" alt="Boat by the cliffs of Puerto Princesa Subterranean River" /><span class="card-title">Underground River</span><span class="card-sub">Full-day • 4.7★ • UNESCO</span></div><div class="card-body"><p>Boat + audio tour, permits & lunch from PPS. <strong data-php="2200">₱2,200</strong></p><div class="card-actions"><button class="btn ghost small wish">♡</button><button class="btn primary small book" data-item="Underground River" data-price="2200">Book Now</button></div></div></article>
+      <article class="card tour reveal d1" data-cat="beach" data-price="1400" data-dur="full" data-rate="46" data-name="Port Barton Island Day"><div class="card-top port"><img class="thumb" loading="lazy" src="https://commons.wikimedia.org/wiki/Special:FilePath/San%20Vicente%2C%20Port%20Barton%20Bay%2C%20Palawan%2C%20Philippines.jpg?width=800" onerror="this.remove()" alt="Port Barton Bay, San Vicente" /><span class="photo-credit">Photo: Wikimedia Commons</span><span class="card-title">Port Barton Islands</span><span class="card-sub">Full-day • 4.6★ • beach</span></div><div class="card-body"><p>German, Starfish Islands + turtle point. <strong data-php="1400">₱1,400</strong></p><div class="card-actions"><button class="btn ghost small wish">♡</button><button class="btn primary small book" data-item="Port Barton Island Day" data-price="1400">Book Now</button></div></div></article>
+      <article class="card tour reveal d2" data-cat="beach" data-price="12000" data-dur="multi" data-rate="48" data-name="Balabac 3D2N Expedition"><div class="card-top balabac"><img class="thumb" loading="lazy" src="https://commons.wikimedia.org/wiki/Special:FilePath/Benlen%20Sandbar%20of%20Balabac.jpg?width=800" onerror="this.remove()" alt="Benlen Sandbar, Balabac" /><span class="photo-credit">Photo: Wikimedia Commons</span><span class="card-title">Balabac 3D2N</span><span class="card-sub">Multi-day • 4.8★ • expedition</span></div><div class="card-body"><p>Sandbars, camping & all meals from Rio Tuba. <strong data-php="12000">₱12,000</strong></p><div class="card-actions"><button class="btn ghost small wish">♡</button><button class="btn primary small book" data-item="Balabac 3D2N Expedition" data-price="12000">Book Now</button></div></div></article>
+    </div>
+    <p class="muted small reveal">Festivals: Baragatan (PPS, June) • El Nido Arts & Music (Nov) • Malagnang Festival (San Vicente, Jan).</p>
+  </div>
+</section>
+
+<!-- 4 ACCOMMODATION -->
+<section id="stay" class="section">
+  <div class="container">
+    <p class="eyebrow reveal">Accommodation</p><h2 class="reveal d1">Sleep steps from the sand</h2>
+    <p class="section-intro reveal d1">Barefoot hostels, bay-view boutiques, and beachfront resorts — lahat malapit sa jump-off ports para maaga ang alis.</p>
+    <div class="filter-bar reveal d2">
+      <select id="hType"><option value="all">All types</option><option value="hostel">Hostel</option><option value="hotel">Hotel</option><option value="resort">Resort</option></select>
+      <select id="hPrice"><option value="all">Any price</option><option value="low">Under ₱1,500</option><option value="mid">₱1,500–₱4,000</option><option value="high">₱4,000+</option></select>
+      <select id="hRate"><option value="0">Any rating</option><option value="85">8.5+</option><option value="90">9.0+</option></select>
+      <label class="check"><input type="checkbox" id="hAccess" /> Wheelchair-friendly</label>
+      <button class="btn ghost small" id="mapToggle">Map view</button>
+    </div>
+    <div class="cards" id="hotelGrid">
+      <article class="hotel card reveal" data-type="hostel" data-price="900" data-rate="87" data-access="0" data-name="El Nido Town Hostel"><div class="card-body"><h3>El Nido Town Hostel</h3><p>Hostel • El Nido town • 8.7 • dorms + pool • <strong data-php="900">₱900</strong>/n</p><div class="card-actions"><button class="btn ghost small wish">♡</button><button class="btn primary small book" data-item="El Nido Town Hostel" data-price="900">Book Now</button></div></div></article>
+      <article class="hotel card reveal d1" data-type="hotel" data-price="3200" data-rate="91" data-access="1" data-name="Corong-Corong Bay Hotel"><div class="card-body"><h3>Corong-Corong Bay Hotel</h3><p>Hotel • El Nido • 9.1 • sea view, elevator • <strong data-php="3200">₱3,200</strong>/n</p><div class="card-actions"><button class="btn ghost small wish">♡</button><button class="btn primary small book" data-item="Corong-Corong Bay Hotel" data-price="3200">Book Now</button></div></div></article>
+      <article class="hotel card reveal d2" data-type="resort" data-price="8500" data-rate="94" data-access="1" data-name="Lio Beach Resort"><div class="card-body"><h3>Lio Beach Resort</h3><p>Resort • El Nido • 9.4 • beachfront, accessible • <strong data-php="8500">₱8,500</strong>/n</p><div class="card-actions"><button class="btn ghost small wish">♡</button><button class="btn primary small book" data-item="Lio Beach Resort" data-price="8500">Book Now</button></div></div></article>
+      <article class="hotel card reveal" data-type="hotel" data-price="2800" data-rate="89" data-access="1" data-name="Coron Harbor Hotel"><div class="card-body"><h3>Coron Harbor Hotel</h3><p>Hotel • Coron town • 8.9 • near port • <strong data-php="2800">₱2,800</strong>/n</p><div class="card-actions"><button class="btn ghost small wish">♡</button><button class="btn primary small book" data-item="Coron Harbor Hotel" data-price="2800">Book Now</button></div></div></article>
+    </div>
+    <div id="hotelMap" class="map-card hidden"><div class="map-head"><strong>Stays map — El Nido & Coron</strong><a target="_blank" rel="noopener" href="https://www.google.com/maps?q=hotels+El+Nido+Palawan">Open in Google Maps →</a></div><iframe title="Hotels map" loading="lazy" src="https://www.google.com/maps?q=hotels+El+Nido+Palawan&output=embed"></iframe></div>
+  </div>
+</section>
+
+<!-- 5 TRANSPORT -->
+<section id="transport" class="section alt">
+  <div class="container">
+    <p class="eyebrow reveal">Transportation</p><h2 class="reveal d1">Flights, ferries, vans & transfers</h2>
+    <div class="transport-grid">
+      <div class="t-card reveal"><span class="t-ico">✈</span><strong>Flights</strong><p>PPS ₱1.5–3.5k • ENI ₱5–9k • USU ₱2.5–5k. Open-jaw saves hours.</p></div>
+      <div class="t-card reveal d1"><span class="t-ico">⛴</span><strong>Ferries</strong><p>El Nido ↔ Coron 4–5h, ₱1.8–2.2k. Book 2 days ahead in peak.</p></div>
+      <div class="t-card reveal d2"><span class="t-ico">🚐</span><strong>Vans</strong><p>PPS→El Nido 5–6h ₱600–800. Morning departures best.</p></div>
+      <div class="t-card reveal d3"><span class="t-ico">🚕</span><strong>Transfers</strong><p>Airport pickup + trike + motorbike ₱500–800/day. Ride-hailing only in PPS.</p></div>
+    </div>
+    <form class="inline-form reveal" id="transferForm"><strong>Book airport transfer:</strong><select id="trRoute"><option>PPS Airport → El Nido</option><option>ENI Airport → Town</option><option>USU Airport → Coron Town</option></select><input id="trDate" type="date" aria-label="Transfer date" /><button class="btn primary small">Reserve ₱600+</button></form>
+    <div class="map-grid">
+      <div class="map-card reveal"><div class="map-head"><strong>El Nido</strong><a target="_blank" rel="noopener" href="https://www.google.com/maps?q=El+Nido,+Palawan">Maps →</a></div><iframe title="El Nido map" loading="lazy" src="https://www.google.com/maps?q=El+Nido,+Palawan&output=embed"></iframe></div>
+      <div class="map-card reveal d1"><div class="map-head"><strong>Coron</strong><a target="_blank" rel="noopener" href="https://www.google.com/maps?q=Coron,+Palawan">Maps →</a></div><iframe title="Coron map" loading="lazy" src="https://www.google.com/maps?q=Coron,+Palawan&output=embed"></iframe></div>
+      <div class="map-card reveal d2"><div class="map-head"><strong>Puerto Princesa</strong><a target="_blank" rel="noopener" href="https://www.google.com/maps?q=Puerto+Princesa,+Palawan">Maps →</a></div><iframe title="PPS map" loading="lazy" src="https://www.google.com/maps?q=Puerto+Princesa,+Palawan&output=embed"></iframe></div>
+    </div>
+  </div>
+</section>
+
+<!-- 6 FOOD -->
+<section id="food" class="section">
+  <div class="container">
+    <p class="eyebrow reveal">Food & dining</p><h2 class="reveal d1">What to eat</h2>
+    <div class="filter-bar reveal d2" id="foodFilter">
+      <button class="chip active" data-diet="all">All</button><button class="chip" data-diet="halal">Halal-friendly</button><button class="chip" data-diet="vegan">Vegan options</button><button class="chip" data-diet="gf">Gluten-free</button>
+    </div>
+    <div class="dish-strip reveal d2">
+      <span class="dish"><strong>Kinilaw na tuna</strong><small>El Nido dampa • PPS Baywalk</small></span>
+      <span class="dish"><strong>Tamilok</strong><small>Kinabuch & Ka Lui, PPS</small></span>
+      <span class="dish"><strong>Tiyan ng tuna</strong><small>grilled jaw • Coron harbor</small></span>
+      <span class="dish"><strong>Kalamansi muffin</strong><small>PPS pasalubong row</small></span>
+      <span class="dish"><strong>Palawan cashew</strong><small>roasted • everywhere</small></span>
+    </div>
+    <div class="cards" id="foodGrid">
+      <article class="card resto reveal" data-diet="halal" data-name="Kinabuch Grill PPS"><div class="card-body"><h3>Kinabuch Grill & Bar (PPS)</h3><p>Native chicken, tamilok, kinilaw + live acoustic nights • ₱₱ • Rizal Ave</p><div class="card-actions"><button class="btn ghost small wish">♡</button><a class="btn primary small" target="_blank" rel="noopener" href="https://www.google.com/maps?q=Kinabuchs+Grill+Puerto+Princesa">Reserve / Map</a></div></div></article>
+      <article class="card resto reveal" data-diet="halal" data-name="El Nido Night Market"><div class="card-body"><h3>El Nido Night Market (Dampa)</h3><p>Grilled tuna, squid, prawns • ₱₱ • halal seafood grills • 4–10pm</p><div class="card-actions"><button class="btn ghost small wish">♡</button><a class="btn primary small" target="_blank" rel="noopener" href="https://www.google.com/maps?q=El+Nido+Night+Market">Reserve / Map</a></div></div></article>
+      <article class="card resto reveal d1" data-diet="vegan gf" data-name="Coron Harbor Food Row"><div class="card-body"><h3>Coron Harbor Food Row</h3><p>Lutong-bahay + veggie + GF grilled fish • ₱₱ • near port</p><div class="card-actions"><button class="btn ghost small wish">♡</button><a class="btn primary small" target="_blank" rel="noopener" href="https://www.google.com/maps?q=Coron+Public+Market+restaurants">Reserve / Map</a></div></div></article>
+      <article class="card resto reveal d2" data-diet="halal" data-name="Ka Lui PPS"><div class="card-body"><h3>Ka Lui + Kinabuchs (PPS)</h3><p>Croc sisig, tamilok, cashew dishes • ₱₱ • must-try</p><div class="card-actions"><button class="btn ghost small wish">♡</button><a class="btn primary small" target="_blank" rel="noopener" href="https://www.google.com/maps?q=Ka+Lui+Restaurant+Puerto+Princesa">Reserve / Map</a></div></div></article>
+    </div>
+  </div>
+</section>
+
+<!-- 7 TRIP PLANNER -->
+<section id="planner" class="section alt">
+  <div class="container">
+    <p class="eyebrow reveal">Trip planner</p><h2 class="reveal d1">Drag, drop & island-hop</h2>
+    <p class="section-intro reveal d1">Buuin ang araw mo: hilahin ang tours sa bawat araw, auto-suggest kung tinatamad, at kitang-kita ang gastos.</p>
+    <p class="muted reveal d1 small">Tap + to add on mobile, or drag cards between days on desktop.</p>
+    <div class="planner-grid">
+      <div class="bank reveal"><h3>Ideas — tap + to add</h3><div id="ideaBank">
+        <div class="idea" draggable="true" data-name="Tour A" data-cost="1800">Tour A • ₱1,800 <button data-add="Day 1">+ Day 1</button> <button data-add="Day 2">+ Day 2</button></div>
+        <div class="idea" draggable="true" data-name="Nacpan sunset" data-cost="300">Nacpan sunset • ₱300 <button data-add="Day 1">+ Day 1</button> <button data-add="Day 2">+ Day 2</button></div>
+        <div class="idea" draggable="true" data-name="Coron lagoons" data-cost="2000">Coron lagoons • ₱2,000 <button data-add="Day 1">+ Day 1</button> <button data-add="Day 2">+ Day 2</button></div>
+        <div class="idea" draggable="true" data-name="Underground River" data-cost="2200">Underground River • ₱2,200 <button data-add="Day 1">+ Day 1</button> <button data-add="Day 2">+ Day 2</button></div>
+      </div><button class="btn ghost small" id="autoPlan">Auto-suggest 3-day plan</button> <button class="btn primary small" id="quizBtn">Plan in 60 seconds</button></div>
+      <div class="days reveal d1"><div class="day" data-day="Day 1"><h4>Day 1</h4><div class="drop"></div></div><div class="day" data-day="Day 2"><h4>Day 2</h4><div class="drop"></div></div><div class="day" data-day="Day 3"><h4>Day 3</h4><div class="drop"></div></div>
+      <div class="plan-actions"><strong id="planTotal">Total: ₱0</strong><button class="btn ghost small" id="saveTrip">Save trip</button><button class="btn primary small" id="shareTrip">Share link</button></div></div>
+    </div>
+    <div class="grid-2 budget-grid" style="margin-top:16px">
+      <div class="info-card reveal"><h3>Budget calculator</h3><label>Days <input type="number" id="bDays" value="7" min="1" max="30" /></label><label>Hotel/day (₱) <input type="number" id="bHotel" value="2500" /></label><label>Food/day (₱) <input type="number" id="bFood" value="1000" /></label><label>Tours <input type="number" id="bTours" value="3" /></label><label>Transport total (₱) <input type="number" id="bTrans" value="3500" /></label></div>
+      <div class="info-card result reveal d1"><h3>Estimate</h3><div class="total" id="bTotal">₱0</div><div class="bar"><span id="bBarStay"></span><span id="bBarFood"></span><span id="bBarTour"></span><span id="bBarTrans"></span></div><div id="bBreak" class="break"></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 8 ESSENTIALS -->
+<section id="essentials" class="section">
+  <div class="container">
+    <p class="eyebrow reveal">Travel essentials</p><h2 class="reveal d1">Visa, money, SIM, packing, weather</h2>
+    <div class="grid-3">
+      <div class="info-card reveal"><div class="ico">🛂</div><h3>Visa & entry</h3><p>30-day visa-free for most passports. Register free at <strong>etravel.gov.ph</strong> ≤72h before arrival. Keep return flight + hotel proof.</p></div>
+      <div class="info-card reveal d1"><div class="ico">💱</div><h3>Currency converter</h3><p><input id="fxAmt" type="number" value="1000" /> PHP = <strong id="fxOut">$--</strong></p><p class="muted small">Cards ok in malls; cash for islands. ATMs in towns.</p></div>
+      <div class="info-card reveal d2"><div class="ico">📶</div><h3>SIM / Wi-Fi</h3><p>Globe or Smart tourist eSIM ₱300–700 at airports. Most hotels have Wi-Fi; signal weak on tours.</p><p class="offline-row"><button class="btn ghost small" id="offlineBtn">General offline pack</button> <button class="btn ghost small" data-offline="El Nido">El Nido guide</button> <button class="btn ghost small" data-offline="Port Barton">Port Barton guide</button></p></div>
+    </div>
+    <div class="grid-2" style="margin-top:14px">
+      <div class="info-card reveal"><h3>Packing checklist <span class="muted small" id="packCount">(0/8)</span></h3><div class="pack-bar"><span id="packBar"></span></div><div class="check-list" id="packList">
+        <label><input type="checkbox" value="passport"><span>Passport + ID copy</span></label><label><input type="checkbox" value="cash"><span>Cash ₱10k–₱20k</span></label><label><input type="checkbox" value="drybag"><span>Dry bag 20L</span></label><label><input type="checkbox" value="sun"><span>Reef-safe sunscreen</span></label><label><input type="checkbox" value="shoes"><span>Water shoes</span></label><label><input type="checkbox" value="meds"><span>Meds + motion pills</span></label><label><input type="checkbox" value="power"><span>Power bank</span></label><label><input type="checkbox" value="insurance"><span>Travel insurance</span></label>
+      </div></div>
+      <div class="info-card reveal d1"><h3>Weather & vaccines</h3><p><strong>Now:</strong> <span id="wxBig">El Nido 30°C, calm seas (dry season Nov–May)</span>. Typhoon risk Jun–Oct — keep buffer day.</p><p class="muted small">Routine vaccines + Hep A/Typhoid advised. No mandatory shots for Palawan. Travel insurance with dive cover recommended.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 9 SAFETY -->
+<section id="safety" class="section alt">
+  <div class="container">
+    <p class="eyebrow reveal">Safety & emergency</p><h2 class="reveal d1">One-tap help</h2>
+    <div class="sos-bar reveal"><button class="btn sos" id="sosBtn">SOS — Show emergency info</button><a class="btn ghost" href="tel:911">Call 911</a></div>
+    <div class="grid-3" style="margin-top:14px">
+      <div class="info-card reveal"><h3>Hospitals</h3><p>El Nido Community Hospital • Coron District Hospital • Ospital ng Palawan (PPS, tertiary).</p><a class="mini-link" target="_blank" rel="noopener" href="https://www.google.com/maps?q=hospitals+in+El+Nido+Palawan">Hospitals map →</a></div>
+      <div class="info-card reveal d1"><h3>Embassies</h3><p>Most embassies in Manila (3–4h away by air). Save your embassy hotline before island days.</p></div>
+      <div class="info-card reveal d2"><h3>Common scams</h3><p>Beach-tout “private boats” without license • inflated trike fares • fake “closed lagoon, pay extra” — verify at accredited desks.</p></div>
+    </div>
+    <div class="grid-2 reveal" style="margin-top:14px">
+      <div class="info-card"><h3>Sea safety <span class="dot-badge">DOT says: vest on</span></h3><p>Life vest on every open-water ride. Skip tours in habagat warnings — coast guard hotline: <button class="mini-link" data-copy="0917-PCG-PALAWAN">tap to copy</button>. Never touch corals or turtles.</p></div>
+      <div class="info-card"><h3>Sustainable traveler</h3><p>Reef-safe sunscreen only, bring-your-own-bottle (refill stations in town), take trash back from islands, keep eco-fee receipts.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 10 LOCAL TIPS -->
+<section id="tips" class="section">
+  <div class="container grid-2">
+    <div class="reveal"><p class="eyebrow">Local tips</p><h2>Language, etiquette & laws</h2>
+      <div class="phrase-grid">
+        <button data-say="Salamat">Salamat <small>thank you — tap to hear</small></button>
+        <button data-say="Magkano?">Magkano? <small>how much?</small></button>
+        <button data-say="Saan ang banyo?">Saan ang banyo? <small>where is the restroom?</small></button>
+        <button data-say="Masarap!">Masarap! <small>delicious!</small></button>
+        <button data-say="Salamat po">Salamat po <small>thank you (polite)</small></button>
+        <button data-say="Magkano po?">Magkano po? <small>how much? (polite)</small></button>
+        <button data-say="Mayad nga adlaw">Mayad nga adlaw <small>Cuyonon: good day</small></button>
+      </div>
+      <p><strong>Tipping:</strong> 5–10% in restaurants, ₱20–50 for guides. <strong>Dress:</strong> cover shoulders in churches; swimwear only at beaches. <strong>Laws:</strong> no littering (fines), no drones without permit in protected areas, no touching corals/turtles.</p>
+    </div>
+    <div class="reveal d1"><p class="eyebrow">Do / Don't</p><h2>Cultural quick list</h2>
+      <ul class="food"><li><strong>Do:</strong> greet with a smile, remove shoes in some homes, ask before photographing rituals.</li><li><strong>Don't:</strong> loud music at Kayangan Lake (sacred), haggle aggressively, feed wildlife.</li></ul>
+    </div>
+  </div>
+</section>
+
+<!-- 11 MAPS -->
+<section id="maps" class="section alt">
+  <div class="container">
+    <p class="eyebrow reveal">Maps & navigation</p><h2 class="reveal d1">Pins for everything</h2>
+    <div class="filter-bar reveal d2" id="pinFilter"><button class="chip active" data-pin="all">All pins</button><button class="chip" data-pin="see">Attractions</button><button class="chip" data-pin="stay">Hotels</button><button class="chip" data-pin="eat">Restaurants</button><button class="chip" data-pin="atm">ATMs</button><button class="chip" data-pin="transit">Transit</button><button class="chip" data-pin="elnido">El Nido</button><button class="chip" data-pin="coron">Coron</button><button class="chip" data-pin="pps">Puerto Princesa</button><button class="chip" data-pin="longbeach">Long Beach</button><button class="chip" data-pin="portbarton">Port Barton</button><button class="chip" data-pin="balabac">Balabac</button></div>
+    <div class="map-card reveal"><div class="map-head"><strong>Palawan — interactive map</strong><a target="_blank" rel="noopener" href="https://www.google.com/maps?q=Palawan+Philippines">Open full map →</a></div><iframe id="mainMap" title="Palawan map" loading="lazy" src="https://www.google.com/maps?q=Palawan,+Philippines&output=embed"></iframe></div>
+    <p class="muted small">Offline: use “Download offline pack” in Essentials, or save Google Maps offline areas before island days.</p>
+  </div>
+</section>
+
+<!-- 12 SHOPPING -->
+<section id="shop" class="section">
+  <div class="container">
+    <p class="eyebrow reveal">Shopping & souvenirs</p><h2 class="reveal d1">Markets, crafts & tax refund</h2>
+    <div class="grid-3">
+      <div class="info-card reveal"><h3>Markets</h3><p>El Nido Night Market crafts • PPS Baywalk souvenir row • Coron public market pearls & cashews.</p></div>
+      <div class="info-card reveal d1"><h3>Local crafts</h3><p>Woven banig, pearl jewelry, cashew & honey, wood carvings. Bargain politely (~10–20%).</p></div>
+      <div class="info-card reveal d2"><h3>Tax refund</h3><p>Tourist VAT refund on accredited retail purchases (keep receipts, min spend applies, claim at Manila/PPS airport).</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 13 REVIEWS -->
+<section id="reviews" class="section alt">
+  <div class="container">
+    <p class="eyebrow reveal">Reviews & community</p><h2 class="reveal d1">Traveler stories</h2>
+    <div class="grid-2">
+      <div class="info-card reveal"><h3>Leave a review</h3><form id="reviewForm"><label>Place <input id="rvPlace" required placeholder="El Nido Tour A" /></label><label>Rating <select id="rvRate"><option>5</option><option>4</option><option>3</option><option>2</option><option>1</option></select></label><label>Review <input id="rvText" required placeholder="What did you love?" /></label><button class="btn primary small">Post review</button></form><div id="reviewList" class="my-promos"></div></div>
+      <div class="info-card reveal d1"><h3>Q&A forum</h3><form id="qaForm"><label>Question <input id="qaQ" required placeholder="Ferry or fly to Coron?" /></label><button class="btn primary small">Ask travelers</button></form><div id="qaList" class="my-promos"></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 14 BLOG -->
+<section id="blog" class="section">
+  <div class="container">
+    <p class="eyebrow reveal">Blog & guides</p><h2 class="reveal d1">Itineraries & hidden gems</h2>
+    <div class="cards">
+      <article class="card reveal"><div class="card-body"><p class="tagline">Itinerary</p><h3>3-day El Nido blitz</h3><p>Day 1 Nacpan • Day 2 Tour A • Day 3 Tour C. Fly ENI in/out.</p></div></article>
+      <article class="card reveal d1"><div class="card-body"><p class="tagline">Itinerary</p><h3>7-day best of Palawan</h3><p>3N El Nido + ferry + 3N Coron, open-jaw flights save 10+ hours.</p></div></article>
+      <article class="card reveal d2"><div class="card-body"><p class="tagline">Budget guide</p><h3>Palawan on ₱2,000/day</h3><p>Hostels, shared tours, dampa dinners, vans over AirSWIFT.</p></div></article>
+      <article class="card reveal"><div class="card-body"><p class="tagline">Hidden gems</p><h3>Beyond the lagoons</h3><p>Port Barton turtles, Long Beach sunrise, Balabac sandbars.</p></div></article>
+    </div>
+  </div>
+</section>
+
+<!-- PHOTO SPOTS -->
+<section id="spots" class="section">
+  <div class="container">
+    <p class="eyebrow reveal">Photo spots</p><h2 class="reveal d1">Instagram-worthy Palawan</h2>
+    <p class="section-intro reveal d1">Shot by real travelers — go at the right hour, tag #TaraPalawan.</p>
+    <div class="spot-strip reveal">
+      <div class="spot"><strong>Big Lagoon kayak</strong><small>El Nido · 7–9 AM glassy water</small></div>
+      <div class="spot"><strong>Kayangan viewpoint</strong><small>Coron · 10 AM clear light</small></div>
+      <div class="spot"><strong>Nacpan palm line</strong><small>El Nido · 4 PM golden</small></div>
+      <div class="spot"><strong>Twin Lagoon swim-through</strong><small>Coron · low tide</small></div>
+      <div class="spot"><strong>Maquinit sunset</strong><small>Coron · 5:30 PM soak</small></div>
+      <div class="spot"><strong>River mouth cave</strong><small>PPS · tour photo stop</small></div>
+    </div>
+  </div>
+</section>
+
+<!-- ISLAND RHYTHM: season meter + fees + route -->
+<section id="island" class="section alt">
+  <div class="container">
+    <p class="eyebrow reveal">Island rhythm</p><h2 class="reveal d1">When to go, what to pay, how to hop</h2>
+    <div class="info-card reveal">
+      <h3>Best time to visit <span class="muted small">· dry Nov–May, habagat Jun–Oct</span></h3>
+      <div class="season-meter" id="seasonMeter">
+        <span class="m dry">J</span><span class="m dry">F</span><span class="m dry">M</span><span class="m dry">A</span><span class="m dry">M</span><span class="m wet">J</span><span class="m wet">J</span><span class="m wet">A</span><span class="m wet">S</span><span class="m wet">O</span><span class="m dry">N</span><span class="m dry">D</span>
+      </div>
+      <p class="muted small legend"><span class="sw dry"></span> Dry & calm <span class="sw wet"></span> Habagat rains · <span id="nowMonth">This month: great for lagoons</span></p>
+    </div>
+    <div class="grid-2" style="margin-top:14px">
+      <div class="info-card reveal"><h3>Fee & permit tracker <span class="muted small" id="feeCount">(0/3)</span></h3>
+        <div class="check-list" id="feeList">
+          <label><input type="checkbox" value="etdf"><span>El Nido eco-fee (ETDF) ₱200 / 10 days — pay at terminal</span></label>
+          <label><input type="checkbox" value="coron"><span>Coron Island entrance ₱200 — usually via tour operator</span></label>
+          <label><input type="checkbox" value="ur"><span>Underground River permit — book 3+ days ahead via operator</span></label>
+        </div>
+        <p class="muted small">Keep receipts — checkpoints ask for them. No permit, no entry.</p>
+      </div>
+      <div class="info-card reveal d1"><h3>El Nido → Coron route planner</h3>
+        <div class="route-opts" id="routeOpts">
+          <button class="route active" data-time="4–5 hrs" data-cost="2000"><strong>Fast ferry</strong><small>4–5 hrs • ₱1,800–2,200 • daily AM</small></button>
+          <button class="route" data-time="8+ hrs" data-cost="4500"><strong>Van + fly via PPS/MNL</strong><small>van 5h + flight • ₱4,500+ • safest in habagat</small></button>
+          <button class="route" data-time="2 days" data-cost="15000"><strong>Expedition boat</strong><small>Tao-style 2D1N • ₱15,000+ • seasonal</small></button>
+        </div>
+        <p class="route-out" id="routeOut">Fast ferry — about 4–5 hrs, ≈₱2,000. Book 2 days ahead in peak.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROMOS -->
+<section id="promos" class="section promo-section">
+  <div class="container">
+    <div class="promo-hero reveal"><div><p class="eyebrow light">Deals • Partners welcome</p><h2>Palawan deals, one place.</h2><div class="countdown"><span>Next drop in</span><strong id="promoTimer">--</strong></div></div>
+      <div class="promo-cta-card"><h3>10% off first island tour</h3><p class="muted small">Code <strong>PALAWAN10</strong></p><div class="promo-cta-row"><button class="btn primary small" data-copy="PALAWAN10">Copy code</button><button class="btn ghost small" id="claimHeroBtn">Claim</button></div></div>
+    </div>
+    <div class="promo-grid" id="promoGrid">
+      <article class="promo-card reveal" data-promo="PALAWAN10"><span class="promo-flag">-10% • Tours</span><h3>Island-Hopping Deal</h3><p>Shared tours, weekdays, lunch & gear included.</p><div class="promo-actions"><button class="btn primary small" data-copy="PALAWAN10">Copy</button><button class="btn ghost small promo-claim">Claim</button></div></article>
+      <article class="promo-card reveal d1" data-promo="STAY15"><span class="promo-flag alt">-15% • Stays</span><h3>Boutique Nights</h3><p>Partner stays, min 2 nights, direct booking.</p><div class="promo-actions"><button class="btn primary small" data-copy="STAY15">Copy</button><button class="btn ghost small promo-claim">Claim</button></div></article>
+      <article class="promo-card reveal d2" data-promo="FOODIE5"><span class="promo-flag food">-₱500 • Food</span><h3>Seafood Bundle</h3><p>Partner dampa rows, min ₱2,000 spend.</p><div class="promo-actions"><button class="btn primary small" data-copy="FOODIE5">Copy</button><button class="btn ghost small promo-claim">Claim</button></div></article>
+    </div>
+    <div class="promo-panels"><div class="info-card reveal"><h3>My promos <span id="promoCount">(0)</span></h3><div id="myPromos" class="my-promos"></div><button class="btn ghost small" id="clearPromos">Clear</button></div>
+    <div class="info-card reveal d1"><h3>List your business</h3><form id="partnerForm"><label>Business <input id="pBiz" required /></label><label>Offer <input id="pOffer" required /></label><button class="btn primary small full">Submit</button></form></div></div>
+  </div>
+</section>
+
+<!-- 15 CONTACT -->
+<section id="contact" class="section">
+  <div class="container">
+    <p class="eyebrow reveal">Contact & support</p><h2 class="reveal d1">We're here to help</h2>
+    <div class="grid-3">
+      <div class="info-card reveal"><h3>Message us</h3><form id="contactForm"><label>Name <input required /></label><label>Email <input type="email" required /></label><label>Message <input required placeholder="How can we help?" /></label><button class="btn primary small">Send</button></form></div>
+      <div class="info-card reveal d1"><h3>FAQ</h3><details open><summary>Book in advance?</summary><p>Peak Dec–Apr: yes, 1–2 days ahead for Tour A & Coron lagoons.</p></details><details><summary>Ferry or fly?</summary><p>Fast ferry links El Nido↔Coron (4–5h). Open-jaw flights avoid backtracking.</p></details><a class="btn ghost small" target="_blank" rel="noopener" href="https://wa.me/639000000000">WhatsApp us →</a></div>
+      <div class="info-card reveal d2"><h3>Newsletter</h3><p>Monthly deals + seasonal guides. No spam.</p><form id="newsForm"><label>Email <input type="email" id="newsEmail" required /></label><button class="btn primary small">Subscribe</button></form><p class="muted small">Wishlist: <span id="wishCount">0 saved</span> • <button class="btn ghost small" id="wishView">View</button></p></div>
+    </div>
+  </div>
+</section>
+
+<div class="weave leaf" aria-hidden="true"></div>
+<footer><div class="container foot-grid">
+    <div><strong>Tara Palawan</strong><p class="muted small">The one-stop platform for Palawan trips — plan, book, and navigate El Nido, Coron, and beyond.</p><p class="muted small">Payments: VISA · Mastercard · PayPal · GCash</p></div>
+    <div><strong>Explore</strong><p><a href="#destinations">Destinations</a><br><a href="#todo">Tours</a><br><a href="#stay">Stays</a><br><a href="#food">Food</a></p></div>
+    <div><strong>Support</strong><p><a href="#safety">Safety & SOS</a><br><a href="#essentials">Travel essentials</a><br><a href="#contact">Contact us</a><br><a href="#top">Back to top ↑</a></p></div>
+    <div><strong>Contact</strong><p class="muted small">hello@tarapalawan.ph<br>+63 (48) 000 0000<br>Open daily 8 AM – 10 PM PHT</p></div>
+  </div>
+  <div class="container foot-base"><span>© 2026 Tara Palawan. Fan-made demo — confirm prices with operators.</span><span>Leave only footprints.</span></div></footer>
+</main>
+
+<button id="chatFab" aria-label="AI assistant">✦ AI</button>
+<div id="chatPanel" class="hidden"><div class="chat-head"><strong>Palawan AI assistant</strong><button id="chatX">✕</button></div><div id="chatLog" class="chat-log"><p class="bot">Hi! Ask me: best time, 7-day plan, El Nido vs Coron, budget…</p></div><form id="chatForm"><input id="chatIn" placeholder="Ask anything…" autocomplete="off" /><button>Send</button></form></div>
+<button id="toTop" aria-label="Back to top">↑</button>
+
+<div class="modal" id="quizModal" aria-hidden="true"><div class="modal-card"><button class="modal-x" data-close>✕</button>
+<p class="eyebrow">60-second quiz</p><h3>What kind of traveler are you?</h3>
+<div class="quiz-opts">
+<button data-quiz="adventure"><strong>Adventure</strong><small>lagoons, dives, hikes</small></button>
+<button data-quiz="chill"><strong>Chill</strong><small>beaches, sunsets, slow days</small></button>
+<button data-quiz="foodie"><strong>Foodie</strong><small>markets, grills, local dishes</small></button>
+<button data-quiz="family"><strong>Family</strong><small>easy tours, safe picks</small></button>
+</div></div></div>
+<div class="modal" id="videoModal" aria-hidden="true"><div class="modal-card video"><button class="modal-x" data-close>✕</button>
+<p class="eyebrow">Watch • Real footage</p><h3 id="videoTitle">Destination guide</h3>
+<div class="video-frame"><iframe id="videoFrame" title="Destination video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+<p class="muted small">Ayaw mag-play dito? Baka naka-block ang embed — panoorin na lang diretso:</p>
+<p><a id="videoLink" class="btn primary small" target="_blank" rel="noopener" href="#">Watch on YouTube →</a></p></div></div>
+<div class="modal" id="bookModal" aria-hidden="true"><div class="modal-card booking"><button class="modal-x" data-close>✕</button>
+<p class="eyebrow">Booking • Secure checkout</p>
+<h3 id="bookTitle">Book</h3>
+<div class="book-summary"><div><strong id="bookItem">—</strong><span class="muted small" id="bookMeta">—</span></div><div class="book-unit"><span class="muted small">from</span><strong id="bookUnit">₱0</strong></div></div>
+<form id="bookForm">
+<label>Date <input id="bkDate" type="date" required /></label>
+<label>Guests
+<div class="stepper"><button type="button" id="gMinus" aria-label="Fewer guests">−</button><input id="bkGuests" type="number" value="2" min="1" max="20" readonly /><button type="button" id="gPlus" aria-label="More guests">+</button></div>
+</label>
+<label><span class="lbl-title">Promo code <span class="muted small">· optional</span></span>
+<div class="promo-row"><input id="bkPromo" placeholder="Try PALAWAN10" autocomplete="off" /><button type="button" class="btn ghost small" id="bkApply">Apply</button></div>
+</label>
+<div class="pay-methods" id="bkPayRow">
+<button type="button" class="pay active" data-pay="Card"><strong>Card</strong><small>Visa • Mastercard</small></button>
+<button type="button" class="pay" data-pay="PayPal"><strong>PayPal</strong><small>Online wallet</small></button>
+<button type="button" class="pay" data-pay="GCash"><strong>GCash</strong><small>E-wallet PH</small></button>
+</div>
+<div class="breakdown" id="bookBreak"></div>
+<button class="btn primary full" type="submit">Pay <span id="bookAmt"></span></button>
+<div class="secure-row"><span>VISA</span><span>Mastercard</span><span>PayPal</span><span>GCash</span><span class="ssl">256-bit SSL secured</span></div>
+<p class="muted small center">Free cancellation up to 48h before • Instant voucher via email</p>
+</form></div></div>
+<div class="modal" id="promoModal" aria-hidden="true"><div class="modal-card"><button class="modal-x" data-close>✕</button><h3 id="modalTitle">Claim</h3><form id="claimForm"><label>Name <input id="cName" required /></label><label>Contact <input id="cContact" required /></label><label>Code <input id="cCode" readonly /></label><button class="btn primary full">Confirm claim</button></form></div></div>
+<div class="modal" id="authModal" aria-hidden="true"><div class="modal-card"><button class="modal-x" data-close>✕</button><h3>Sign in / up</h3><form id="authForm"><label>Email <input id="aEmail" type="email" required /></label><button class="btn primary full">Continue</button></form></div></div>
+<div class="modal" id="sosModal" aria-hidden="true"><div class="modal-card"><button class="modal-x" data-close>✕</button><h3>SOS — Emergency</h3><p><a href="tel:911">📞 Call 911 (national)</a></p><p><a target="_blank" rel="noopener" href="https://www.google.com/maps?q=hospitals+in+Palawan">🏥 Nearest hospitals map</a></p><p class="muted small">Share your live location with your hotel + emergency contact before island days.</p></div></div>
+<div id="a11yPanel" class="hidden"><button data-a11y="big">Larger text</button><button data-a11y="contrast">High contrast</button><button data-a11y="reset">Reset</button></div>
+<div class="toast" id="toast"></div>
+<script src="app.js?v=20261009"></script>
+</body>
+</html>
